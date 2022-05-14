@@ -35,9 +35,8 @@ RUN chmod u+s /opt/protostar/bin/*
 
 # install tools
 RUN chmod u+x ./tools/*
-RUN ./tools/checksec
-# RUN ./tools/pwntools
-# RUN ./tools/radare2
+RUN ./tools/pwntools
+RUN ./tools/radare2
 
 # create a user
 RUN useradd -ms /bin/bash proto
