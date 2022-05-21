@@ -2,4 +2,3 @@
 
 apt-get install -y python3 python3-pip git libssl-dev libffi-dev build-essential
 
-pip3 install pwntools ropper 
