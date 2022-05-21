@@ -37,7 +37,7 @@ RUN chmod u+s /opt/protostar/bin/*
 RUN chmod u+x ./tools/*
 RUN ./tools/pwngdb
 RUN ./tools/pwntools
-#RUN ./tools/radare2
+RUN ./tools/radare2
 
 # create a user
 RUN useradd -ms /bin/bash proto
