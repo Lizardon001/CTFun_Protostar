@@ -43,5 +43,8 @@ RUN ./tools/radare2
 RUN useradd -ms /bin/bash proto
 RUN echo 'proto:proto' | chpasswd
 
+# adding gdbinit
+RUN cp /root/.gdbinit /home/proto/
+
 # start sshd
 CMD ["/usr/sbin/sshd","-D"]
