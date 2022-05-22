@@ -1,15 +1,12 @@
-FROM ubuntu
+FROM i386/ubuntu
 
 RUN mkdir /protostar
 
 WORKDIR /protostar
 
-# adding x86 architecture
-#RUN dpkg-architecture 
-
 
 # Install requirements 
-RUN apt update && apt install build-essential -y && apt-get install manpages-dev openssh-server git gdb python3 -y
+RUN apt update && apt install build-essential -y && apt-get install manpages-dev openssh-server git gdb python3 python -y
 
 # Configure SSH server
 RUN mkdir /var/run/sshd
