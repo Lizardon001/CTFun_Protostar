@@ -5,7 +5,7 @@ RUN mkdir /protostar
 WORKDIR /protostar
 
 # Install requirements 
-RUN apt update && apt install build-essential -y && apt-get install manpages-dev openssh-server git gdb python3 -y
+RUN apt update && apt install build-essential -y && apt-get install manpages-dev openssh-server git gdb python3 python -y
 
 # Configure SSH server
 RUN mkdir /var/run/sshd
@@ -28,6 +28,9 @@ CMD ["echo 0 | tee /proc/sys/kernel/randomize_va_space"]
 
 # copy protostar code source
 COPY . .
+
+# pwngdb configure
+RUN cp /root/.gdbinit /home/proto/
 
 # move protostar bins
 RUN mv ./protostar /opt
