@@ -4,9 +4,8 @@ RUN mkdir /protostar
 
 WORKDIR /protostar
 
-
 # Install requirements 
-RUN apt update && apt install build-essential -y && apt-get install manpages-dev openssh-server git gdb python3 python -y
+RUN apt update && apt install build-essential -y && apt-get install manpages-dev openssh-server git gdb python3 -y
 
 # Configure SSH server
 RUN mkdir /var/run/sshd
@@ -43,9 +42,6 @@ RUN ./tools/radare2
 # create a user
 RUN useradd -ms /bin/bash proto
 RUN echo 'proto:proto' | chpasswd
-
-# adding gdbinit
-RUN cp /root/.gdbinit /home/proto/
 
 # start sshd
 CMD ["/usr/sbin/sshd","-D"]
